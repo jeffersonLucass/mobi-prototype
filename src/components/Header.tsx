@@ -1,6 +1,7 @@
-import { Bell, Menu } from "lucide-react";
+import { Bell, Menu, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import mobiLogo from "@/assets/mobi-logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -17,10 +18,17 @@ const Header = () => {
           </h1>
         </div>
 
-        <Button variant="ghost" size="icon" className="text-foreground relative">
-          <Bell className="w-5 h-5" />
-          <span className="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
-        </Button>
+        <div className="flex items-center gap-1">
+          <Link to="/login">
+            <Button variant="ghost" size="icon" className="text-foreground">
+              <User className="w-5 h-5" />
+            </Button>
+          </Link>
+          <Button variant="ghost" size="icon" className="text-foreground relative">
+            <Bell className="w-5 h-5" />
+            <span className="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+          </Button>
+        </div>
       </div>
     </header>
   );
